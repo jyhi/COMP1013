@@ -7,7 +7,7 @@ int main (void)
   puts ("Please input an English letter:");
   scanf ("%c", &c);
   printf (
-    "\"%c\" and its neightbors in ASCII:\n"
+    "\"%c\" and its neighbors in ASCII:\n"
     "%d\t%d\t%d\n"
     "%c\t%c\t%c\n",
     c,
