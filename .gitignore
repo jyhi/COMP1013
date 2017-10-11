@@ -1,0 +1,6 @@
+# Adapted from https://stackoverflow.com/questions/5711120/gitignore-without-binary-files
+# VenomVendor's answer
+# Ignoring all binary files (ignoring all files without extensions)
+*
+!*.*
+!*/
