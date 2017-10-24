@@ -9,7 +9,7 @@ int main (void)
   if ((height - 105) > (weight + 20)) {
     puts ("You are too slim");
   } else {
-    if ((weight - 10) < (height - 105) <= (weight + 20)) {
+    if (((weight - 10) < (height - 105)) && ((height - 105) <= (weight + 20))) {
       puts ("You are fit");
     } else {
       puts ("You are too fat");
