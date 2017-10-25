@@ -42,7 +42,7 @@ int main (void)
       break;
   }
 
-  printf ("%g US dollars converts to %g euros.\n", usd, result);
+  printf ("%g US dollars converts to %g %s.\n", usd, result, (selection == 'E' || selection == 'e') ? "euro" : "yuan");
 
   return 0;
 }

@@ -11,5 +11,7 @@ int main (void)
 
   n = n + n;
 
+  printf ("%d", n); // Not needed per requirement
+
   return 0;
 }
