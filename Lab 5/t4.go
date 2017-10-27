@@ -1,11 +1,16 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "os"
+  "bufio"
+)
 
 func main() {
   var gpa_alpha rune = 0
+  var stdin *bufio.Reader = bufio.NewReader(os.Stdin)
 
-  fmt.Scanf("%c", &gpa_alpha)
+  fmt.Fscanf(stdin, "%c", &gpa_alpha)
 
   switch gpa_alpha {
   case 'A':
@@ -32,5 +37,5 @@ func main() {
     fmt.Println("Illegal GPA.")
   }
 
-  // Should avoid os.Exit()? (See t3.go)
+  stdin.Discard(stdin.Buffered())
 }
