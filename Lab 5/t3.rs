@@ -24,21 +24,15 @@ fn main() {
     };
 
     println!("Convert to Euro(E) or RMB(R)?");
+
+    // Clear buffer (as buffered stdio)
     buf.clear();
+
     std::io::stdin().read_line(&mut buf).unwrap();
-    let selection = match buf.split_whitespace().next() {
-        Some(r) => {
-            match r.parse::<char>() {
-                Ok(r) => r,
-                Err(e) => {
-                    // FIXME: Inputing multiple characters (e.g. "RE") will result in
-                    // "ParseCharError { kind: TooManyChars }: Illegal type of conversion."
-                    println!("{:?}: Illegal type of conversion.", e);
-                    std::process::exit(255);
-                }
-            }
-        },
+    let selection = match buf.chars().next() {
+        Some(r) => r,
         None => {
+            // This happends when you input ^D(NUL) (since \n is also a character)
             println!("No input... Exiting.");
             std::process::exit(255);
         }
