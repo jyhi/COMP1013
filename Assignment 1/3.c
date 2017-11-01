@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define ABS(a) (((a) >= 0) ? (a) : (-a))
+#define ABS(a) (((a) >= 0) ? (a) : -(a))
 
 int main (void)
 {
