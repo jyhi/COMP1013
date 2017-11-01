@@ -12,11 +12,6 @@ int main (void)
     return 255;
   }
 
-  if (i > 999) {
-    puts ("The input is too big");
-    return 0;
-  }
-
   // Use absolute value (handling negative number)
   i = ABS(i);
 
