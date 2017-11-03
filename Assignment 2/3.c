@@ -11,6 +11,11 @@ int main (void)
     return 1;
   }
 
+  if (n < 0) {
+    puts ("Meet negative number, expect positive one. Exiting.");
+    return 1;
+  }
+
   for (int i = 0; i <= n / 2 + 1; i++) {
     if (i * i == n) {
       printf ("%d is a perfect square (%d x %d)\n", n, i, i);
