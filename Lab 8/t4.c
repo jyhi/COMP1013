@@ -13,13 +13,13 @@
  * @param ch [in] The character to judge.
  * @return 0 If ch is not a digit, otherwise 1.
  */
-int t4_is_digit_ascii (int ch)
-{
-  if (ch >= '0' && ch <= '9')
-    return 1; // True
-
-  return 0; // False
-}
+// int t4_is_digit_ascii (int ch)
+// {
+//   if (ch >= '0' && ch <= '9')
+//     return 1; // True
+//
+//   return 0; // False
+// }
 
 /**
  * Convert a character into an integer.
@@ -29,13 +29,13 @@ int t4_is_digit_ascii (int ch)
  * @param ch [in] Character to convert.
  * @return The converted integer.
  */
-int char2int (int ch)
-{
-  if (ch >= '0' && ch <= '9')
-    return ch - '0';
-
-  return ch;
-}
+// int char2int (int ch)
+// {
+//   if (ch >= '0' && ch <= '9')
+//     return ch - '0';
+//
+//   return ch;
+// }
 
 /**
  * Calculate length of str.
@@ -65,35 +65,35 @@ size_t t4_strlen (const char *restrict str)
  * @return The converted integer.
  * @see t4_is_digit_ascii
  */
-int str2int (const char *restrict str, const size_t length)
-{
-  if (!str)
-    return 0;
-
-  // Sanity Check
-  // if (t4_strlen (str) != length) {
-  //   fprintf (stderr, "*** %s: %d: String length mismatch.\n", __func__, __LINE__);
-  //   abort ();
-  // }
-
-  size_t first_number_pos = 0;
-  unsigned base = 1;
-  int ret = 0;
-
-  for (size_t i = 0; i < length; i++) {
-    if (t4_is_digit_ascii (str[i])) {
-      first_number_pos++;
-    } else {
-      break;
-    }
-  }
-
-  for (int i = first_number_pos - 1; i >= 0; i--, base *= 10) {
-    ret += base * char2int(str[i]);
-  }
-
-  return ret;
-}
+// int str2int (const char *restrict str, const size_t length)
+// {
+//   if (!str)
+//     return 0;
+//
+//   // Sanity Check
+//   // if (t4_strlen (str) != length) {
+//   //   fprintf (stderr, "*** %s: %d: String length mismatch.\n", __func__, __LINE__);
+//   //   abort ();
+//   // }
+//
+//   size_t first_number_pos = 0;
+//   unsigned base = 1;
+//   int ret = 0;
+//
+//   for (size_t i = 0; i < length; i++) {
+//     if (t4_is_digit_ascii (str[i])) {
+//       first_number_pos++;
+//     } else {
+//       break;
+//     }
+//   }
+//
+//   for (int i = first_number_pos - 1; i >= 0; i--, base *= 10) {
+//     ret += base * char2int(str[i]);
+//   }
+//
+//   return ret;
+// }
 
 int main (void)
 {
@@ -106,6 +106,14 @@ int main (void)
     return 1;
   }
 
-  printf ("%d\n", str2int (input, t4_strlen (input)));
+  // printf ("%d\n", str2int (input, t4_strlen (input)));
+
+  for (int i = 0; i < t4_strlen (input); i++) {
+    if (input[i] < '0' || input[i] > '9')
+      break;
+    putchar (input[i]);
+  }
+  putchar ('\n');
+
   return 0;
 }
