@@ -13,7 +13,7 @@ func main() {
 
   stdin := bufio.NewReader(os.Stdin)
 
-  _, e = fmt.Fscanf(stdin, "%s", &input);
+  _, e = fmt.Fscanf(stdin, "%s", &input)
   if e != nil {
     fmt.Println("Invalid input:", e)
     return
