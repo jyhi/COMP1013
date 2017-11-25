@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+/**
+ * Calculate n!.
+ *
+ * @param n [in] Operand.
+ * @return n!.
+ */
 unsigned fac (const unsigned n)
 {
   if (!n)
@@ -14,7 +20,7 @@ unsigned fac (const unsigned n)
 
 int main (void)
 {
-  int a[3] = {0};
+  int a[3] = {0}; // a, b, and c
   int r = 0;
 
   puts ("Input a, b and c to calculate a! + b! + c!:");

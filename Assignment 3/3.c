@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * Calculate the average number of the given integers.
+ *
+ * @param nums   [in] A series of integers.
+ * @param length [in] Length of nums. If length is larger than the actual size
+ *                    of nums, the behavior is undefined.
+ * @return The average number of nums.
+ */
 int average (const int *restrict nums, const size_t length)
 {
   if (!nums || length == 0)
