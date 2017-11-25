@@ -14,6 +14,8 @@ int main (void)
     return 0;
   }
 
+  // Per requirement, here we do insertion first.
+
   // Go to the position to insert
   int pos = 0;
   for (; pos < 6; pos++) {
