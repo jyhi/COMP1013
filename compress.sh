@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# The assignment requirement is handling a .zip archive with .cpp files in it.
+# The assignment requirement is handing a .zip archive with .cpp files in it.
 # I wrote those C files with .c suffix (shouldn't it be?).
-# I can't be bothered to type these command by hand.
+# I can't be bothered to type these commands by hand.
 #
 # $1 = Directory to operate. If not specified, the current dir is used.
 
@@ -28,5 +28,5 @@ done
 
 zip "$ZIP_PREFIX"_"$ID" *.cpp
 
-# Remove useless things.
+# Remove useless things
 rm -f *.cpp
