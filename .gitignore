@@ -4,5 +4,12 @@
 *
 !*.*
 !*/
+
 # And a.out
 a.out
+
+# And .cpp
+*.cpp
+
+# And .zip
+*.zip
