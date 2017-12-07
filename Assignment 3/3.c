@@ -15,7 +15,7 @@ int average (const int *restrict nums, const size_t length)
 
   int sum = 0;
 
-  for (int i = 0; i < length; i++) {
+  for (size_t i = 0; i < length; i++) {
     sum += nums[i];
   }
 
