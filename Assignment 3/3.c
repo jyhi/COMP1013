@@ -25,7 +25,7 @@ int average (const int *restrict nums, const size_t length)
 int main (void)
 {
   int a[50] = {0};
-  int avr = 0, count = 0;
+  int count = 0;
   int r = 0;
 
   puts ("Input a sequence of integers (-1 to stop):");
