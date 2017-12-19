@@ -1,0 +1,6 @@
+Ben 3.12
+Tim 2.45
+Bruce 3.77
+Diana 3.53
+Lily 2.98
+Kid 2.14
