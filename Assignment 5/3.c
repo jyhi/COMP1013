@@ -63,7 +63,6 @@ int main (void)
   FILE *fp_sorted = fopen ("sorted.txt", "w");
   if (!fp_sorted) {
     puts ("Error: cannot create sorted.txt for write.");
-    fclose (fp_sorted);
     return 1;
   }
 
