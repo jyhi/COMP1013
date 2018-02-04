@@ -1,16 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-#ifndef bool
-#define bool _Bool
-#endif
-#ifndef true
-#define true 1
-#endif
-#ifndef false
-#define false 0
-#endif
+#include <stdbool.h>
 
 #define BUFSIZE 512
 #define BUFSIZE_SCANF "511"
