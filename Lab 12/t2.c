@@ -40,6 +40,7 @@ int main (void)
       for (int m = 0; m <= stucount; m++) {
         free_student (&students[m]);
       }
+      free (stutemp.name);
       abort ();
     }
 
@@ -51,6 +52,7 @@ int main (void)
       for (int m = 0; m <= stucount; m++) {
         free_student (&students[m]);
       }
+      free (stutemp.name);
       return 1;
     }
 
@@ -96,6 +98,11 @@ int main (void)
   puts ("\nName\tID\tGPA");
   for (int i = 0; i < stucount; i++) {
     printf ("%s\t%d\t%g\n", students[i].name, students[i].id, students[i].gpa);
+  }
+
+  // Free allocated memory
+  for (int m = 0; m < stucount; m++) {
+    free_student (&students[m]);
   }
 
   return 0;
