@@ -60,6 +60,14 @@ int main (void)
   }
 
   Student *students = malloc (sizeof (Student) * n);
+  if (!students) {
+    fprintf(
+      stderr,
+      "** Memory allocation failed at %s (%s:%d).\n",
+      __func__, __FILE__, __LINE__
+    );
+    abort();
+  }
 
   for (int i = 0; i < n; i++) {
     printf ("----- Recording the %dth student...\n", i + 1);
@@ -72,6 +80,7 @@ int main (void)
       for (int m = 0; m <= i; m++) {
         free_student (&students[m]);
       }
+      free(students);
       abort ();
     }
     r = scanf (" %" BUFSIZE_SCANF "[^\n]", students[i].name);
@@ -81,6 +90,7 @@ int main (void)
       for (int m = 0; m <= i; m++) {
         free_student (&students[m]);
       }
+      free(students);
       return 1;
     }
 
@@ -92,6 +102,7 @@ int main (void)
       for (int m = 0; m <= i; m++) {
         free_student (&students[m]);
       }
+      free(students);
       return 1;
     }
 
@@ -103,6 +114,7 @@ int main (void)
       for (int m = 0; m <= i; m++) {
         free_student (&students[m]);
       }
+      free(students);
       abort ();
     }
     r = scanf (" %" BUFSIZE_SCANF "[^\n]", students[i].major);
@@ -112,6 +124,7 @@ int main (void)
       for (int m = 0; m <= i; m++) {
         free_student (&students[m]);
       }
+      free(students);
       return 1;
     }
   } // for (int i = 0; i < n; i++)
@@ -121,6 +134,12 @@ int main (void)
   for (int i = 0; i < n; i++) {
     print_student_info (students[i]);
   }
+
+  // Free allocated heap memory before exiting...
+  for (int m = 0; m <= n; m++) {
+    free_student (&students[m]);
+  }
+  free(students);
 
   return 0;
 }

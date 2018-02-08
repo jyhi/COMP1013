@@ -64,6 +64,8 @@ int main (void)
     puts (bsod);
   }
 
+  free (week);
+
   return 0;
 }
 
