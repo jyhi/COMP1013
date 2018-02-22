@@ -1,0 +1,4 @@
+-- "As an extension language, Lua has no notion of a 'main' program: it works
+-- embedded in a host client, called the embedding program or simply the host.
+-- (Frequently, this host is the stand-alone lua program.)"
+--   https://www.lua.org/manual/5.3/manual.html

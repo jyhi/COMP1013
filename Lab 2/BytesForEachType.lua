@@ -1,0 +1,4 @@
+-- "Lua is a dynamically typed language. This means that variables do not have
+-- types; only values do. There are no type definitions in the language. All
+-- values carry their own type."
+--   https://www.lua.org/manual/5.3/manual.html
