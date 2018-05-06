@@ -15,7 +15,7 @@ function pack {
 
   # Copy all .c files with .cpp suffix
   for i in *.c; do
-    cp $i ${i/.c/.cpp}
+    cp ${i} ${i%.c}.cpp
   done
 
   # Strip spaces in the directory name as the prefix of .zip file
@@ -31,12 +31,15 @@ function pack {
 
   zip "$ZIP_PREFIX"_"$ID" *.cpp
 
+  # Move the zip out
+  mv "$ZIP_PREFIX"_"$ID".zip ..
+
   # Remove useless things
   rm -f *.cpp
 }
 
 function remove_zips {
-  find -name 'Lab*_*.zip' -exec rm -f {} \;
+  find -name 'Lab*_*.zip' -exec rm -vf {} \;
 }
 
 if [[ "$1" == "clear" ]]; then
